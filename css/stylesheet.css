@@ -1,0 +1,44 @@
+#navImg{
+  height: 75px;
+  padding: 0px;
+  margin-left: 10%;
+}
+
+#map {
+  height: 500px;
+  width: 500px;
+}
+
+#submitButton{
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.container{
+  width: 85%;
+}
+a {
+  color: red;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: red;
+}
+
+.truckMap{
+  height: 40px;
+}
+
+.truckHeader{
+  font-size: 14px;
+}
+
+.truckText{
+  font-size: 10px;
+  margin: 0px;
+}
+
+#truckDiv{
+  height: 500px;
+  overflow: auto;
+}
