@@ -12,7 +12,7 @@
 
 <body class="#f5f5f5 grey lighten-4">
     <nav>
-        <div class="nav-wrapper #ffca28 amber lighten-1"><img class="navImg" src="imgs/foodtruck.png">
+        <div class="nav-wrapper #ffca28 amber lighten-1"><a href="index.html"><img class="navImg" src="imgs/foodtruck.png"></a>
             <h1 class="brand-logo center grey-text text-lighten-4"><b>Trucking Around: Food Truck Finder</b></h1>
             <ul class="right hide-on-med-and-down">
               <li><a href="favorites.html"><i class="material-icons">favorite</i></a></li>
@@ -25,21 +25,24 @@
 
         <div class="row">
             <div class="col s12">
-                <h5 class="center">Welcome to Trucking Around - the Food Truck finding app</h5><br>
+                <h5 class="center">Welcome to Trucking Around - the Food Truck finding app</h5>
+                <p class="center">Be sure to save your favorites. To view favorites click on the heart icon in the top right corner.</p><br>
                 <form>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix red-text">search</i>
-                            <input placeholder="enter your address" id="address" type="text" class="validate">
+                            <input placeholder="enter your address -- Defaults to City Hall" id="address" type="text" class="validate">
                             <label for="address">Your Location in San Francisco</label>
                         </div>
 
                         <div class="input-field col s2 browser-default red-text">
                             <select id="distanceField">
-                        <option value="" disabled selected>Choose</option>
+                        <option value="" disabled selected>Default - 0.5 Miles</option>
                         <option value="0.2">4 Blocks</option>
                         <option value="0.5">0.5 Miles</option>
+                        <option value="0.75">0.75 Miles</option>
                         <option value="1">1 Mile</option>
+                        <option value="1.5">1.5 Miles</option>
                         <option value="5000">Anywhere</option>
                       </select>
                             <label>Choose your Distance</label>
@@ -47,7 +50,7 @@
 
                         <div class="input-field col s2 browser-default red-text">
                             <select id="dayOfWeek">
-                        <option value="" disabled selected>Choose</option>
+                        <option value="" disabled selected>Default - Curent Day</option>
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>
                         <option value="Wednesday">Wednesday</option>

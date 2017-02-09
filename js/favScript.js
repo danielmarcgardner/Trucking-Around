@@ -12,8 +12,8 @@ function clearStorage(){
   const clear = document.getElementById('resetStorage');
   clear.addEventListener('click', function(){
     event.preventDefault();
-    localStorage.clear();
-    console.log("You have cleared your localStorage")
+    localStorage.setItem('fav', JSON.stringify([]))
+    console.log("You have cleared your Favorites!")
   });
 }
 
@@ -48,7 +48,7 @@ function favPageCreator() {
                 mapMaker(favMap, favTruckPageArr[i]);
             }
             for (let i = 0; i < favTruckPageArr.length; i++) {
-                addToCollapse(favTruckPageArr[i], favTrucks);
+                addToCollapse(favTruckPageArr[i], favTrucks, favTruckPageArr);
             }
         })
 }

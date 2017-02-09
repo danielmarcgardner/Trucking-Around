@@ -12,7 +12,6 @@ function truckingAround() {
         const foodTruckArr = [];
         const filteredTrucks = [];
         if (address.value === "") {
-            initMap()
             address.value = "1 Dr Carlton B Goodlett Pl"
         }
         if (day.value === "" ) {
@@ -22,9 +21,10 @@ function truckingAround() {
           distanceFrom.value = "0.5"
         }
         localStorage.setItem('loc', address.value)
+        let currAddress = localStorage.loc
         let zoomDistance = zooming(distanceFrom.value)
         truckList.innerHTML = " ";
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address.value}&key=${apiKey}`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${currAddress}&key=${apiKey}`)
             .then(function(res1) {
                 return res1.json()
             })
@@ -74,7 +74,7 @@ function truckingAround() {
                         }
 
                         for (let i = 0; i < filteredTrucks.length; i++) {
-                            addToCollapse(filteredTrucks[i], truckList);
+                            addToCollapse(filteredTrucks[i], truckList, favTruckArr);
                         }
                     })
             })
