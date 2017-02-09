@@ -10,7 +10,7 @@ function initMap() {
 
 function clearStorage(){
   const clear = document.getElementById('resetStorage');
-  clear.addEventListener('click', function(){
+  clear.addEventListener('click', () => {
     event.preventDefault();
     localStorage.setItem('fav', JSON.stringify([]))
     console.log("You have cleared your Favorites!")
@@ -19,7 +19,7 @@ function clearStorage(){
 
 function refreshPage(){
   const refresh = document.getElementById('refresh');
-  refresh.addEventListener('click', function(){
+  refresh.addEventListener('click', () => {
     console.log("You have refreshed your localStorage!");
     window.location.reload()
   })
@@ -30,10 +30,10 @@ function favPageCreator() {
     let favTruckPageArr = JSON.parse(localStorage.fav);
     let loc = localStorage.loc;
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${loc}&key=${apiKey}`)
-        .then(function(res3) {
+        .then( (res3) => {
             return res3.json()
         })
-        .then(function(map2JSON) {
+        .then( (map2JSON) => {
             favMap = new google.maps.Map(document.getElementById('favMap'), {
                 zoom: 15,
                 center: new google.maps.LatLng(map2JSON.results[0].geometry.location.lat, map2JSON.results[0].geometry.location.lng),
@@ -44,6 +44,17 @@ function favPageCreator() {
                 icon: "imgs/home-2.png",
                 position: map2JSON.results[0].geometry.location
             });
+            favTruckPageArr.sort( (a, b) => {
+                let nameA = a.name.toUpperCase();
+                let nameB = b.name.toUpperCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            });
             for (let i = 0; i < favTruckPageArr.length; i++) {
                 mapMaker(favMap, favTruckPageArr[i]);
             }
@@ -52,6 +63,6 @@ function favPageCreator() {
             }
         })
 }
-setTimeout(function(){favPageCreator()}, 1000);
+setTimeout( () => {favPageCreator()}, 1000);
 clearStorage();
 refreshPage();

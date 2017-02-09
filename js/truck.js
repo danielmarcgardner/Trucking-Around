@@ -12,23 +12,23 @@ function truckingAround() {
         const foodTruckArr = [];
         const filteredTrucks = [];
         if (address.value === "") {
-            address.value = "1 Dr Carlton B Goodlett Pl"
+            address.value = "1 Dr Carlton B Goodlett Pl";
         }
         if (day.value === "" ) {
-          day.value = didntEnterDay()
+          day.value = didntEnterDay();
         }
         if (distanceFrom.value === "") {
           distanceFrom.value = "0.5"
         }
-        localStorage.setItem('loc', address.value)
-        let currAddress = localStorage.loc
-        let zoomDistance = zooming(distanceFrom.value)
+        localStorage.setItem('loc', address.value);
+        let currAddress = localStorage.loc;
+        let zoomDistance = zooming(distanceFrom.value);
         truckList.innerHTML = " ";
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${currAddress}&key=${apiKey}`)
-            .then(function(res1) {
+            .then( (res1) => {
                 return res1.json()
             })
-            .then(function(mapJSON) {
+            .then( (mapJSON) => {
                 map = new google.maps.Map(document.getElementById('map'), {
                     zoom: zoomDistance,
                     center: new google.maps.LatLng(mapJSON.results[0].geometry.location.lat, mapJSON.results[0].geometry.location.lng),
@@ -41,12 +41,12 @@ function truckingAround() {
                 });
                 return mapJSON.results[0].geometry.location
             })
-            .then(function(coords) {
+            .then( (coords) => {
                 fetch(`https://data.sfgov.org/resource/bbb8-hzi6.json?coldtruck=N&dayofweekstr=${day.value}`)
                     .then(function(res2) {
                         return res2.json()
                     })
-                    .then(function(resJSON) {
+                    .then( (resJSON) => {
                         for (let i = 0; i < resJSON.length; i++) {
                             let foodTruck = new FoodTruck(resJSON[i].latitude, resJSON[i].longitude, resJSON[i].applicant, resJSON[i].optionaltext, resJSON[i].dayofweekstr, resJSON[i].starttime, resJSON[i].endtime, resJSON[i].location, resJSON[i].permit)
                             foodTruckArr.push(foodTruck);
@@ -57,7 +57,7 @@ function truckingAround() {
                                 filteredTrucks.push(foodTruckArr[i])
                             }
                         }
-                        filteredTrucks.sort(function(a, b) {
+                        filteredTrucks.sort( (a, b) => {
                             let nameA = a.name.toUpperCase();
                             let nameB = b.name.toUpperCase();
                             if (nameA < nameB) {
