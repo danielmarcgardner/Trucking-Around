@@ -59,7 +59,7 @@ function favPageCreator() {
                 mapMaker(favMap, favTruckPageArr[i]);
             }
             for (let i = 0; i < favTruckPageArr.length; i++) {
-                addToCollapse(favTruckPageArr[i], favTrucks, favTruckPageArr);
+                addToCollapse(favTruckPageArr[i], favTrucks, favTruckPageArr, map2JSON.results[0].geometry.location);
             }
         })
 }

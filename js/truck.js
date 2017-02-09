@@ -74,7 +74,7 @@ function truckingAround() {
                         }
 
                         for (let i = 0; i < filteredTrucks.length; i++) {
-                            addToCollapse(filteredTrucks[i], truckList, favTruckArr);
+                            addToCollapse(filteredTrucks[i], truckList, favTruckArr, coords);
                         }
                     })
             })

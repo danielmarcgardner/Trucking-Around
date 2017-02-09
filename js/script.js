@@ -75,7 +75,7 @@ function remover(arr, data){
   }
 
 // Creates the collapsing data
-function addToCollapse(data, docAppend, arr) {
+function addToCollapse(data, docAppend, arr, geodist) {
     let clicks = 0;
     let listItem = document.createElement('li');
     let body = document.createElement('div');
@@ -85,12 +85,14 @@ function addToCollapse(data, docAppend, arr) {
     let hours = document.createElement('p');
     let favButton = document.createElement('button');
     let removeButton = document.createElement('button');
+    let distTo = document.createElement('p');
     body.setAttribute('class', "collapsible-header");
     body.innerText = `${data.name}`;
     fullText.setAttribute('class', "collapsible-body");
     street.innerHTML = `<b> ${data.address}</b>`;
     desc.innerHTML = `${data.description}`;
     hours.innerHTML = `Open from ${data.start} to ${data.end} every ${data.day}`;
+    distTo.innerHTML = `You are ${Number(distance(geodist.lat, geodist.lng, data.lat, data.lng)).toFixed(3)} miles away from ${data.name}`
     favButton.setAttribute('class', "btn small waves-effect waves-light red listButton");
     favButton.innerHTML = 'Add to Favorites <i class="material-icons">add_box</i>';
     favButton.addEventListener('click', function(){
@@ -108,6 +110,7 @@ function addToCollapse(data, docAppend, arr) {
     fullText.append(street);
     fullText.append(desc);
     fullText.append(hours);
+    fullText.append(distTo);
     fullText.append(favButton);
     fullText.append(removeButton);
     listItem.append(body);
