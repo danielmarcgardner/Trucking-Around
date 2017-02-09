@@ -1,10 +1,10 @@
-#navImg{
+.navImg{
   height: 75px;
   padding: 0px;
   margin-left: 10%;
 }
 
-#map {
+#map, #favMap {
   height: 500px;
   width: 500px;
 }
@@ -38,7 +38,21 @@ ul.dropdown-content.select-dropdown li span {
   margin: 0px;
 }
 
-#truckDiv{
+#truckDiv, #favTruckDiv{
   height: 500px;
   overflow: auto;
+}
+
+.listButton{
+  width: 100%;
+}
+
+#resetStorage {
+  margin-left: 35%;
+  display: inline-block;
+}
+
+#refresh{
+  margin-left: 25px;
+  display: inline-block;
 }
