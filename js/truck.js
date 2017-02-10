@@ -1,4 +1,3 @@
-
 //Program Function
 function truckingAround() {
     const submitButton = document.getElementById("submit");
@@ -6,6 +5,8 @@ function truckingAround() {
     const day = document.getElementById("dayOfWeek");
     const distanceFrom = document.getElementById("distanceField");
     const address = document.getElementById("address");
+    let favTruckArr =[];
+
 
     submitButton.addEventListener('click', function() {
         event.preventDefault();
@@ -19,6 +20,9 @@ function truckingAround() {
         }
         if (distanceFrom.value === "") {
           distanceFrom.value = "0.5"
+        }
+        if (localStorage.fav !== undefined) {
+          favTruckArr = JSON.parse(localStorage.fav)
         }
         localStorage.setItem('loc', address.value);
         let currAddress = localStorage.loc;
@@ -76,6 +80,9 @@ function truckingAround() {
                         for (let i = 0; i < filteredTrucks.length; i++) {
                             addToCollapse(filteredTrucks[i], truckList, favTruckArr, coords);
                         }
+                        if (filteredTrucks.length === 0){
+                        Materialize.toast('Sorry no food trucks in range! Please search again to find your hunger', 4000)
+                      }
                     })
             })
     })

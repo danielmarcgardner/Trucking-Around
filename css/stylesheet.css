@@ -1,62 +1,64 @@
-.navImg{
-  height: 75px;
-  padding: 0px;
-  margin-left: 10%;
+.navImg {
+    height: 75px;
+    padding: 0px;
+    margin-left: 10%;
 }
 
 #map, #favMap {
-  height: 500px;
-  width: 500px;
+    height: 500px;
+    width: 500px;
 }
 
-#submitButton{
-  padding-top: 20px;
-  padding-left: 10px;
+#submitButton {
+    padding-top: 20px;
+    padding-left: 10px;
 }
 
-.container{
-  width: 85%;
+.container {
+    width: 85%;
 }
+
 a {
-  color: red;
+    color: red;
 }
 
 ul.dropdown-content.select-dropdown li span {
     color: red;
 }
 
-.truckMap{
-  height: 40px;
+.truckMap {
+    height: 40px;
 }
 
-.truckHeader{
-  font-size: 14px;
+.truckHeader {
+    font-size: 14px;
 }
 
-.truckText{
-  font-size: 10px;
-  margin: 0px;
+.truckText {
+    font-size: 10px;
+    margin: 0px;
 }
 
-#truckDiv, #favTruckDiv{
-  height: 500px;
-  overflow: auto;
+#truckDiv, #favTruckDiv {
+    height: 500px;
+    overflow: auto;
 }
 
-.listButton{
-  width: 100%;
+.listButton {
+    width: 100%;
 }
 
 #resetStorage {
-  margin-left: 35%;
-  display: inline-block;
+    margin-left: 35%;
+    display: inline-block;
 }
 
-#refresh{
-  margin-left: 25px;
-  display: inline-block;
+#refresh {
+    margin-left: 25px;
+    display: inline-block;
 }
-#directionsMap{
-  height: 300px;
-  width: 450px;
+
+#directionsMap {
+    height: 300px;
+    width: 450px;
 }

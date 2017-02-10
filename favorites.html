@@ -4,22 +4,22 @@
 <head>
     <meta charset="utf-8">
     <title>Trucking Around: Food Truck Finder - Favorites!</title>
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="materialize/css/materialize.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body class="#f5f5f5 grey lighten-4">
-  <nav>
-        <div class="nav-wrapper #ffca28 amber lighten-1"><a href="index.html"><img class="navImg" src="imgs/foodtruck.png"></a>
-          <h1 class="brand-logo center grey-text text-lighten-4"><b>Trucking Around: Food Truck Finder</b></h1>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="favorites.html"><i class="material-icons">favorite</i></a></li>
-            <li><a href="index.html"><i class="material-icons">home</i></a></li>
-          </ul>
-      </div>
-  </nav>
+    <nav>
+        <div class="nav-wrapper #ffca28 amber lighten-1">
+            <a href="index.html"><img class="navImg" src="imgs/foodtruck.png"></a>
+            <h1 class="brand-logo center grey-text text-lighten-4"><b>Trucking Around: Food Truck Finder</b></h1>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="favorites.html"><i class="material-icons">favorite</i></a></li>
+                <li><a href="index.html"><i class="material-icons">home</i></a></li>
+            </ul>
+        </div>
+    </nav>
     <br>
     <div class="container">
 
@@ -29,71 +29,66 @@
             </div>
         </div>
         <div class="row">
-          <button class = "btn waves-effect waves-light red col s1.5 center" id="resetStorage">Clear All Favorites <i class="material-icons">remove_circle</i>
+            <button class="btn waves-effect waves-light red col s1.5 center" id="resetStorage">Clear All Favorites <i class="material-icons">remove_circle</i>
           </button>
-          <button class = "btn waves-effect waves-light red col s1.5 center" id="refresh">Refresh Favorites <i class="material-icons">refresh</i>
+            <button class="btn waves-effect waves-light red col s1.5 center" id="refresh">Refresh Favorites <i class="material-icons">refresh</i>
           </button>
         </div>
 
         <div class="row">
             <div class="col s6">
-              <h4 class="center red-text">  Favorite Food Trucks Map</h4>
+                <h4 class="center red-text">  Favorite Food Trucks Map</h4>
                 <div id="favMap">&nbsp;</div>
             </div>
-                <!-- Stay above here -->
             <div class="col s6">
-              <h4 class="center red-text"> Favorite Food Trucks</h4>
-              <div id="favTruckDiv">
-              <ul class="collapsible" data-collapsible="accordion" id="favTruckList">
-              </ul>
-              </div>
+                <h4 class="center red-text"> Favorite Food Trucks</h4>
+                <div id="favTruckDiv">
+                    <ul class="collapsible" data-collapsible="accordion" id="favTruckList">
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-
     <footer class="page-footer #ffca28 amber lighten-1">
-   <div class="container">
-     <div class="row">
-       <div class="col l6 s12">
-         <h5 class="grey-text text-lighten-4">Trucking Around: Food Truck Finder</h5>
-         <p class="grey-text text-lighten-4">Please submit your feedback <a href="mailto:daniel.marc.gardner@gmail.com">here</a></p>
-         <p class="grey-text text-lighten-4">Data provided by <a href="https://data.sfgov.org/"> SF Open Data</a>. If you see any data that is incorrect please let SF Open Data know <a href="http://support.datasf.org/customer/portal/emails/new"> here</a>.</p>
-       </div>
-       <div class="col l4 offset-l2 s12">
-         <a class="github-button" href="https://github.com/danielmarcgardner" data-style="mega" data-count-href="/danielmarcgardner/followers" data-count-api="/users/danielmarcgardner#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @danielmarcgardner on GitHub">Follow @danielmarcgardner</a>
-         <p class="grey-text text-lighten-4">Icons courtesy of <a href=" https://mapicons.mapsmarker.com"> Maps Icons Collection</a></p><img src="imgs/logo.gif">
-       </div>
-     </div>
-   </div>
-   <div class="footer-copyright">
-     <div class="container">
-     © 2017 Daniel Gardner - Q1 Galvanize Project
-     </div>
-   </div>
- </footer>
- <!--Scripts for loading  -->
- <script type="text/javascript" src="apikeys.js"></script>
-<!-- So I can use the gitignore file -->
- <script>
- var GOOGLE_MAP_KEY = apiKey;
- function loadScript() {
-   var script = document.createElement('script');
-   script.type = 'text/javascript';
-   script.src = 'https://maps.googleapis.com/maps/api/js?' +
-   'key=' + GOOGLE_MAP_KEY +'&callback=initMap';
-   script.async = true;
-   script.defer = true;
-   document.body.appendChild(script);
- }
- window.onload = loadScript;
-</script>
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="grey-text text-lighten-4">Trucking Around: Food Truck Finder</h5>
+                    <p class="grey-text text-lighten-4">Please submit your feedback <a href="mailto:daniel.marc.gardner@gmail.com">here</a></p>
+                    <p class="grey-text text-lighten-4">Data provided by <a href="https://data.sfgov.org/"> SF Open Data</a>. If you see any data that is incorrect please let SF Open Data know <a href="http://support.datasf.org/customer/portal/emails/new"> here</a>.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <a class="github-button" href="https://github.com/danielmarcgardner" data-style="mega" data-count-href="/danielmarcgardner/followers" data-count-api="/users/danielmarcgardner#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @danielmarcgardner on GitHub">Follow @danielmarcgardner</a>
+                    <p class="grey-text text-lighten-4">Icons courtesy of <a href=" https://mapicons.mapsmarker.com"> Maps Icons Collection</a></p><img src="imgs/logo.gif">
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Daniel Gardner - Q1 Galvanize Project
+            </div>
+        </div>
+    </footer>
+    <!--Scripts for loading  -->
+    <script type="text/javascript" src="apikeys.js"></script>
+    <!-- So I can use the gitignore file -->
+    <script>
+        var GOOGLE_MAP_KEY = apiKey;
+
+        function loadScript() {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?' +
+                'key=' + GOOGLE_MAP_KEY + '&callback=initMap';
+            script.async = true;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+        window.onload = loadScript;
+    </script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <!-- <script type="text/javascript" src="testscript.js"></script> -->
-    <!-- <script type="text/javascript" src="testscript2.js"></script> -->
-    <!-- <script type="text/javascript" src="testscript3.js"></script> -->
-    <!-- <script type="text/javascript" src="testscript4.js"></script> -->
     <script type="text/javascript" src="js/favScript.js"></script>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 

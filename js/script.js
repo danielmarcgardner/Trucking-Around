@@ -7,9 +7,8 @@ $(document).ready(function() {
 //Google Maps
 let map;
 
-//Favorites
-let favTruckArr = [];
 
+//Making the GMap
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
@@ -33,9 +32,6 @@ function mapMaker(whichMap,result) {
     marker.addListener('click', function() {
         infowindow.open(whichMap, marker);
     });
-    // google.maps.event.addListener(map, 'mousemove', function (event) {
-    //   infowindow.close();
-    // });
     marker.setMap(whichMap);
 }
 
@@ -66,6 +62,8 @@ class FoodTruck {
         this.identifier = identifier
     }
 }
+
+//Removes duplicates from the favorites array
 function remover(arr, data){
   if (arr.indexOf(data) !== -1) {
     let x = arr.indexOf(data)
@@ -74,6 +72,7 @@ function remover(arr, data){
   return arr
 }
 
+//Use this for creating the popupWindow
 function newPopup(url) {
 	popupWindow = window.open(
 		url,'popUpWindow','height=500,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
@@ -102,8 +101,8 @@ function addToCollapse(data, docAppend, arr, geodist) {
     favButton.setAttribute('class', "btn small waves-effect waves-light red listButton");
     favButton.innerHTML = 'Add to Favorites <i class="material-icons">add_box</i>';
     favButton.addEventListener('click', function(){
-      if (favTruckArr.indexOf(data) === -1) {
-        favTruckArr.push(data);
+      if (arr.indexOf(data) === -1) {
+        arr.push(data);
         localStorage.setItem('fav', JSON.stringify(arr));
       }
     });
@@ -152,4 +151,3 @@ function didntEnterDay(){
   let n = d.getDay();
   return days[n]
 }
-console.log("Location is defaulted to City Hall; Distance is defaulted to 0.5 Miles; and Day of Week is set defaulted to current day. If you search for out of SF your search will return no results as the data is only in SF (unless you do any anywhere search and you scroll back to SF)")
