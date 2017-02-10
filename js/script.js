@@ -92,7 +92,7 @@ function addToCollapse(data, docAppend, arr, geodist) {
     let distTo = document.createElement('p');
     let directButton = document.createElement('button');
     body.setAttribute('class', "collapsible-header");
-    body.innerText = `${data.name}`;
+    body.innerHTML = `${data.name}<i class="material-icons prefix red-text">arrow_drop_down</i>`;
     fullText.setAttribute('class', "collapsible-body");
     street.innerHTML = `<b> ${data.address}</b>`;
     desc.innerHTML = `${data.description}`;
