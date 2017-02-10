@@ -69,10 +69,15 @@ class FoodTruck {
 function remover(arr, data){
   if (arr.indexOf(data) !== -1) {
     let x = arr.indexOf(data)
-      arr.splice(x,1)
-    }
-    return arr
+    arr.splice(x,1)
   }
+  return arr
+}
+
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=500,width=500,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+}
 
 // Creates the collapsing data
 function addToCollapse(data, docAppend, arr, geodist) {
@@ -86,6 +91,7 @@ function addToCollapse(data, docAppend, arr, geodist) {
     let favButton = document.createElement('button');
     let removeButton = document.createElement('button');
     let distTo = document.createElement('p');
+    let directButton = document.createElement('button');
     body.setAttribute('class', "collapsible-header");
     body.innerText = `${data.name}`;
     fullText.setAttribute('class', "collapsible-body");
@@ -106,6 +112,12 @@ function addToCollapse(data, docAppend, arr, geodist) {
     removeButton.addEventListener('click', function(){
       remover(arr, data);
       localStorage.setItem('fav', JSON.stringify(arr));
+    });
+    directButton.setAttribute('class', "btn small waves-effect waves-light red listButton");
+    directButton.innerHTML = 'Get Directions! <i class="material-icons">directions_walk</i>'
+    directButton.addEventListener('click', function(){
+      localStorage.setItem('destination', data.address);
+      newPopup("directions.html")
     })
     fullText.append(street);
     fullText.append(desc);
@@ -113,6 +125,7 @@ function addToCollapse(data, docAppend, arr, geodist) {
     fullText.append(distTo);
     fullText.append(favButton);
     fullText.append(removeButton);
+    fullText.append(directButton);
     listItem.append(body);
     listItem.append(fullText);
     docAppend.append(listItem);
