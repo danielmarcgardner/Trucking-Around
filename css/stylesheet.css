@@ -6,7 +6,9 @@
 
 #map, #favMap {
     height: 500px;
-    width: 500px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 #submitButton {
@@ -49,16 +51,12 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 #resetStorage {
-    margin-left: 35%;
-    display: inline-block;
-}
-
-#refresh {
-    margin-left: 25px;
+    margin-left: 40%;
+    margin-right: 40%;
     display: inline-block;
 }
 
 #directionsMap {
     height: 300px;
-    width: 450px;
+    width: 100%;
 }

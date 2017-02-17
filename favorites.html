@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Trucking Around: Food Truck Finder - Favorites!</title>
-    <link rel="stylesheet" href="materialize/css/materialize.css">
+    <link rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
@@ -13,8 +13,8 @@
     <nav>
         <div class="nav-wrapper #ffca28 amber lighten-1">
             <a href="index.html"><img class="navImg" src="imgs/foodtruck.png"></a>
-            <h1 class="brand-logo center grey-text text-lighten-4"><b>Trucking Around: Food Truck Finder</b></h1>
-            <ul class="right hide-on-med-and-down">
+            <h1 class="brand-logo center grey-text text-lighten-4 hide-on-small-and-down"><b>Trucking Around: Food Truck Finder</b></h1>
+            <ul id="nav-mobile" class="right">
                 <li><a href="favorites.html"><i class="material-icons">favorite</i></a></li>
                 <li><a href="index.html"><i class="material-icons">home</i></a></li>
             </ul>
@@ -29,13 +29,6 @@
             </div>
         </div>
         <div class="row">
-            <button class="btn waves-effect waves-light red col s1.5 center" id="resetStorage">Clear All Favorites <i class="material-icons">remove_circle</i>
-          </button>
-            <button class="btn waves-effect waves-light red col s1.5 center" id="refresh">Refresh Favorites <i class="material-icons">refresh</i>
-          </button>
-        </div>
-
-        <div class="row">
             <div class="col s6">
                 <h4 class="center red-text">  Favorite Food Trucks Map</h4>
                 <div id="favMap">&nbsp;</div>
@@ -47,6 +40,10 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light red col s1.5 center" id="resetStorage">Clear All Favorites <i class="material-icons">remove_circle</i>
+          </button>
         </div>
     </div>
     <footer class="page-footer #ffca28 amber lighten-1">

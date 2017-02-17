@@ -1,10 +1,9 @@
 let directionsMap;
 
-
 function initMap() {
-  let directionsService = new google.maps.DirectionsService;
-  let directionsDisplay = new google.maps.DirectionsRenderer;
-  let directionsMap = new google.maps.Map(document.getElementById('directionsMap'), {
+  const directionsService = new google.maps.DirectionsService;
+  const directionsDisplay = new google.maps.DirectionsRenderer;
+  const directionsMap = new google.maps.Map(document.getElementById('directionsMap'), {
     zoom: 14,
     center: {lat: 37.7699298, lng: -122.4469157}
   });
