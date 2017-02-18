@@ -4,8 +4,8 @@ $(document).ready(() => {
   $('.collapsible').collapsible();
 });
 
-// Google Maps
-let map;
+// Google Maps --> USED VAR TO PREVENT ERROR WHEN LOADING IN NON-CHROME BROWSERS
+var map;
 
 // Making the GMap
 function initMap() {

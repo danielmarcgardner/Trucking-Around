@@ -1,4 +1,5 @@
-let directionsMap;
+// Google Maps --> USED VAR TO PREVENT ERROR WHEN LOADING IN NON-CHROME BROWSERS
+var directionsMap;
 
 function initMap() {
   const directionsService = new google.maps.DirectionsService;

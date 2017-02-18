@@ -1,4 +1,5 @@
-let favMap;
+// Google Maps --> USED VAR TO PREVENT ERROR WHEN LOADING IN NON-CHROME BROWSERS
+var favMap;
 
 function initMap() {
   favMap = new google.maps.Map(document.getElementById('favMap'), {
@@ -8,6 +9,7 @@ function initMap() {
   });
 }
 
+//Clearse storage and resets page
 function clearStorage(){
   const clear = document.getElementById('resetStorage');
 
@@ -18,6 +20,7 @@ function clearStorage(){
   });
 }
 
+//Function similar to getting trucks but this one sets it on the favorites page
 function favPageCreator() {
   const favTrucks = document.getElementById('favTruckList');
   let favTruckPageArr = JSON.parse(localStorage.fav);
