@@ -1,0 +1,23 @@
+{
+  "name": "truckingaround",
+  "version": "1.0.0",
+  "description": "q1 project",
+  "main": "apikeys.js",
+  "dependencies": {
+    "whatwg-fetch": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmarcgardner/Trucking-Around.git"
+  },
+  "author": "Daniel Gardner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmarcgardner/Trucking-Around/issues"
+  },
+  "homepage": "https://github.com/danielmarcgardner/Trucking-Around#readme"
+}
